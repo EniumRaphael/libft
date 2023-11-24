@@ -6,18 +6,20 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2023/11/24 16:24:21 by rparodi          ###   ########.fr        #
+#    Updated: 2023/11/13 19:10:24 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=libftprintf.a
-CC=cc
-CFLAGS=-Wall -Wextra -Werror
+NAME=libft.a
+CC=clang
+CFLAGS=-Wall -Wextra -Werror -g2
 RM=rm -f
-LIBFT = ./libft/ft_strdup.c ./libft/ft_strlcpy.c ./libft/ft_strlen.c
-SRC = ./src/ft_printf.c ./src/ft_put.c
+LDFLAGS=-L.
+LDLIBS=-lft
+SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+SRCBonus = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 OBJ = $(SRC:.c=.o)
-OBJLibft = $(LIBFT:.c=.o)
+OBJBonus = $(SRCBonus:.c=.o)
 
 GREEN = \033[32m
 GREY = \033[0;90m
@@ -39,9 +41,9 @@ header:
 		@echo -e '$(GOLD)              ******* $(END)\n'
 		@echo -e '$(GREY)                                      Made by rparodi$(END)\n\n'
 
-$(NAME): $(OBJ) $(OBJLibft)
+$(NAME): $(OBJ) $(OBJBonus)
 		@echo -e '$(GREY) Compiling $(END)$(GOLD)$(NAME)$(END)'
-		@ar rc $(NAME) $(OBJ) $(OBJLibft)
+		@ar rc $(NAME) $(OBJ) $(OBJBonus)
 		@ranlib $(NAME)
 
 %.o: %.c
@@ -51,11 +53,17 @@ $(NAME): $(OBJ) $(OBJLibft)
 all: header $(NAME)
 		@echo -e '\n$(GREY) Compilation$(END)$(GREEN) Done$(END)'
 
+bonus: $(OBJ) $(OBJBonus)
+		@echo -e '$(GREY) Compiling $(END)$(GOLD)$(NAME)$(END)'
+		@ar rc $(NAME) $(OBJ) $(OBJBonus)
+		@ranlib $(NAME)
+
+
 dev: all bonus clean
 
 clean:
 		@echo -e '$(GREY) Removing $(END)$(RED)Object$(END)'
-		@$(RM) $(OBJ) $(OBJLibft)
+		@$(RM) $(OBJ) $(OBJBonus)
 
 fclean: clean
 		@echo -e '$(GREY) Removing $(END)$(RED)Program$(END)'
@@ -63,4 +71,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re dev header
+.PHONY: all clean bonus fclean re dev header
