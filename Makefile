@@ -6,47 +6,61 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2023/11/13 19:10:24 by rparodi          ###   ########.fr        #
+#    Updated: 2023/11/24 16:24:21 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=libft.a
-CC=clang
-CFLAGS=-Wall -Wextra -Werror -g2
+NAME=libftprintf.a
+CC=cc
+CFLAGS=-Wall -Wextra -Werror
 RM=rm -f
-LDFLAGS=-L.
-LDLIBS=-lft
-SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-SRCBonus = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+LIBFT = ./libft/ft_strdup.c ./libft/ft_strlcpy.c ./libft/ft_strlen.c
+SRC = ./src/ft_printf.c ./src/ft_put.c
 OBJ = $(SRC:.c=.o)
-OBJBonus = $(SRCBonus:.c=.o)
+OBJLibft = $(LIBFT:.c=.o)
 
-$(NAME): $(OBJ) $(OBJBonus)
-		ar rc $(NAME) $(OBJ) $(OBJBonus)
-		ranlib $(NAME)
+GREEN = \033[32m
+GREY = \033[0;90m
+RED = \033[0;31m
+GOLD = \033[38;5;220m
+END = \033[0m
+
+header:
+		@echo -e '\n\n'
+		@echo -e '$(GOLD)            *******     *****  ******* $(END)'
+		@echo -e '$(GOLD)          ******        ***    ******* $(END)'
+		@echo -e '$(GOLD)      *******                 ******* $(END)'
+		@echo -e '$(GOLD)     ******                 ******* $(END)'
+		@echo -e '$(GOLD)  *******                 ******* $(END)'
+		@echo -e '$(GOLD) ********************   *******      * $(END)'
+		@echo -e '$(GOLD) ********************   *******    *** $(END)'
+		@echo -e '$(GOLD)              *******   ******* ****** $(END)'
+		@echo -e '$(GOLD)              ******* $(END)'
+		@echo -e '$(GOLD)              ******* $(END)\n'
+		@echo -e '$(GREY)                                      Made by rparodi$(END)\n\n'
+
+$(NAME): $(OBJ) $(OBJLibft)
+		@echo -e '$(GREY) Compiling $(END)$(GOLD)$(NAME)$(END)'
+		@ar rc $(NAME) $(OBJ) $(OBJLibft)
+		@ranlib $(NAME)
 
 %.o: %.c
-		$(CC) -I. -o $@ -c $? $(CFLAGS)
+		@echo -e '$(GREY) Compiling $(END)$(GREEN)$<$(END)'
+		@$(CC) -I. -o $@ -c $? $(CFLAGS)
 
-all: $(NAME)
-
-bonus: $(OBJ) $(OBJBonus)
-		ar rc $(NAME) $(OBJ) $(OBJBonus)
-		ranlib $(NAME)
-
+all: header $(NAME)
+		@echo -e '\n$(GREY) Compilation$(END)$(GREEN) Done$(END)'
 
 dev: all bonus clean
 
 clean:
-		$(RM) $(OBJ) $(OBJBonus)
+		@echo -e '$(GREY) Removing $(END)$(RED)Object$(END)'
+		@$(RM) $(OBJ) $(OBJLibft)
 
 fclean: clean
-		$(RM) $(NAME)
+		@echo -e '$(GREY) Removing $(END)$(RED)Program$(END)'
+		@$(RM) $(NAME)
 
-re: fclean all bonus
+re: fclean all
 
-.PHONY: clean clean
-
-so: $(OBJ) $(OBJBonus)
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(SRCBonus)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(OBJBonus)
+.PHONY: all bonus clean fclean re dev header
