@@ -17,12 +17,8 @@ static size_t	ft_strnlen(char *dest, size_t size)
 	size_t	i;
 
 	i = 0;
-	while (i < size)
-	{
-		if (dest[i] == '\0')
-			break ;
+	while (i < size && dest[i] != '\0')
 		i++;
-	}
 	return (i);
 }
 
