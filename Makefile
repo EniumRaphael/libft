@@ -28,33 +28,33 @@ GOLD = \033[38;5;220m
 END = \033[0m
 
 header:
-		@echo -e '\n\n'
-		@echo -e '$(GOLD)            *******     *****  ******* $(END)'
-		@echo -e '$(GOLD)          ******        ***    ******* $(END)'
-		@echo -e '$(GOLD)      *******                 ******* $(END)'
-		@echo -e '$(GOLD)     ******                 ******* $(END)'
-		@echo -e '$(GOLD)  *******                 ******* $(END)'
-		@echo -e '$(GOLD) ********************   *******      * $(END)'
-		@echo -e '$(GOLD) ********************   *******    *** $(END)'
-		@echo -e '$(GOLD)              *******   ******* ****** $(END)'
-		@echo -e '$(GOLD)              ******* $(END)'
-		@echo -e '$(GOLD)              ******* $(END)\n'
-		@echo -e '$(GREY)                                      Made by rparodi$(END)\n\n'
+		@clear
+		@printf '\n$(GOLD)            *******     *****  ******* $(END)\n'
+		@printf '$(GOLD)          ******        ***    ******* $(END)\n'
+		@printf '$(GOLD)      *******                 ******* $(END)\n'
+		@printf '$(GOLD)     ******                 ******* $(END)\n'
+		@printf '$(GOLD)  *******                 ******* $(END)\n'
+		@printf '$(GOLD) ********************   *******      * $(END)\n'
+		@printf '$(GOLD) ********************   *******    *** $(END)\n'
+		@printf '$(GOLD)              *******   ******* ****** $(END)\n'
+		@printf '$(GOLD)              ******* $(END)\n'
+		@printf '$(GOLD)              ******* $(END)\n\n'
+		@printf '$(GREY)                                      Made by rparodi$(END)\n\n\n'
 
 $(NAME): $(OBJ) $(OBJBonus)
-		@echo -e '$(GREY) Compiling $(END)$(GOLD)$(NAME)$(END)'
+		@printf '$(GREY) Compiling $(END)$(GOLD)$(NAME)$(END)\n'
 		@ar rc $(NAME) $(OBJ) $(OBJBonus)
 		@ranlib $(NAME)
 
 %.o: %.c
-		@echo -e '$(GREY) Compiling $(END)$(GREEN)$<$(END)'
+		@printf '$(GREY) Compiling $(END)$(GREEN)$<$(END)\n'
 		@$(CC) -I. -o $@ -c $? $(CFLAGS)
 
 all: header $(NAME)
-		@echo -e '\n$(GREY) Compilation$(END)$(GREEN) Done$(END)'
+		@printf '\n$(GREY) Compilation$(END)$(GREEN) Done$(END)\n'
 
 bonus: $(OBJ) $(OBJBonus)
-		@echo -e '$(GREY) Compiling $(END)$(GOLD)$(NAME)$(END)'
+		@printf '$(GREY) Compiling $(END)$(GOLD)$(NAME)$(END)\n'
 		@ar rc $(NAME) $(OBJ) $(OBJBonus)
 		@ranlib $(NAME)
 
@@ -62,11 +62,11 @@ bonus: $(OBJ) $(OBJBonus)
 dev: all bonus clean
 
 clean:
-		@echo -e '$(GREY) Removing $(END)$(RED)Object$(END)'
+		@printf '$(GREY) Removing $(END)$(RED)Object$(END)\n'
 		@$(RM) $(OBJ) $(OBJBonus)
 
 fclean: clean
-		@echo -e '$(GREY) Removing $(END)$(RED)Program$(END)'
+		@printf '$(GREY) Removing $(END)$(RED)Program$(END)\n'
 		@$(RM) $(NAME)
 
 re: fclean all
