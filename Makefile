@@ -6,7 +6,7 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2023/11/13 19:10:24 by rparodi          ###   ########.fr        #
+#    Updated: 2023/12/27 18:32:57 by raphael          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,9 @@ GREY = \033[0;90m
 RED = \033[0;31m
 GOLD = \033[38;5;220m
 END = \033[0m
+
+all: header $(NAME)
+		@printf '\n$(GREY) Compilation$(END)$(GREEN) Done$(END)\n'
 
 header:
 		@clear
@@ -49,9 +52,6 @@ $(NAME): $(OBJ) $(OBJBonus)
 %.o: %.c
 		@printf '$(GREY) Compiling $(END)$(GREEN)$<$(END)\n'
 		@$(CC) -I. -o $@ -c $? $(CFLAGS)
-
-all: header $(NAME)
-		@printf '\n$(GREY) Compilation$(END)$(GREEN) Done$(END)\n'
 
 bonus: $(OBJ) $(OBJBonus)
 		@printf '$(GREY) Compiling $(END)$(GOLD)$(NAME)$(END)\n'
