@@ -6,7 +6,7 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:56:30 by rparodi           #+#    #+#             */
-/*   Updated: 2023/11/13 19:50:31 by rparodi          ###   ########.fr       */
+/*   Updated: 2024/10/31 13:02:55 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ static size_t	ft_check_sign(char *str, long *nb)
 	return (0);
 }
 
+/**
+ * @brief Converts integer to string
+ *
+ * @param n the integer that will be converted
+ * @return The string with this integer
+ */
 char	*ft_itoa(int n)
 {
 	size_t		i;
