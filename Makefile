@@ -6,7 +6,7 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2024/10/31 17:22:49 by rparodi          ###   ########.fr        #
+#    Updated: 2024/10/31 17:26:05 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,10 @@ LDFLAGS = -L.
 LDLIBS = -lft
 
 INCLUDES =	./includes/libft/
+
+# Objects
+OBJDIRNAME = ./build
+OBJ = $(addprefix $(OBJDIRNAME)/,$(SRC:.c=.o))
 
 SRC =	char/ft_isdigit.c \
 		char/ft_isalnum.c \
@@ -80,10 +84,6 @@ SRC =	char/ft_isdigit.c \
 		str/ft_strrchr.c \
 		str/ft_strtrim.c \
 		str/ft_substr.c
-
-# Objects
-OBJDIRNAME = ./build
-OBJ = $(addprefix $(OBJDIRNAME)/,$(SRC:.c=.o))
 
 # Colors
 GREEN = \033[32m

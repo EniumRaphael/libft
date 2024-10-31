@@ -6,7 +6,7 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:56:02 by rparodi           #+#    #+#             */
-/*   Updated: 2023/11/13 12:14:57 by rparodi          ###   ########.fr       */
+/*   Updated: 2024/10/31 18:13:39 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,15 @@ static char	**ext_w(char **words_array, const char *str, char sep, int size)
 	return (words_array);
 }
 
+/**
+ * @brief Splits a string into an array of substrings based on a delimiter.
+ * 
+ * @param s The string to split.
+ * @param c The delimiter character.
+ * 
+ * @return A NULL-terminated array of substrings,
+ * or NULL if memory allocation fails.
+ */
 char	**ft_split(char const *s, char c)
 {
 	int		size;

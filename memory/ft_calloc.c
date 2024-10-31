@@ -6,12 +6,18 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:47:17 by rparodi           #+#    #+#             */
-/*   Updated: 2023/11/13 14:47:17 by rparodi          ###   ########.fr       */
+/*   Updated: 2024/10/31 17:55:30 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Allocates and zeroes memory for an array
+ *
+ * @param nmemb Number of elements to allocate
+ * @param size Size of each element in bytes
+ */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	size_t	total;

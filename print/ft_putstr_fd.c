@@ -6,12 +6,18 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:58:46 by rparodi           #+#    #+#             */
-/*   Updated: 2023/11/10 15:57:46 by rparodi          ###   ########.fr       */
+/*   Updated: 2024/10/31 18:05:11 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief print a string on a file descriptor
+ *
+ * @param s the string to print
+ * @param fd the file descriptor
+ */
 void	ft_putstr_fd(char *s, int fd)
 {
 	write(fd, s, ft_strlen(s));

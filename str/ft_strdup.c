@@ -6,12 +6,20 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:53:59 by rparodi           #+#    #+#             */
-/*   Updated: 2023/11/13 20:02:09 by rparodi          ###   ########.fr       */
+/*   Updated: 2024/10/31 18:14:44 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Duplicates a string.
+ * 
+ * @param s1 The string to duplicate.
+ * 
+ * @return A pointer to the duplicated string,
+ * or NULL if memory allocation fails.
+ */
 char	*ft_strdup(const char *s)
 {
 	size_t	len;

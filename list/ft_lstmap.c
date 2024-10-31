@@ -6,12 +6,20 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:43:28 by rparodi           #+#    #+#             */
-/*   Updated: 2023/11/12 19:28:02 by rparodi          ###   ########.fr       */
+/*   Updated: 2024/10/31 17:51:38 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Create an other list from an old one with a function on all element
+ *
+ * @param lst the chained list
+ * @param f the function to function to iterate
+ * @param del The function to delete the old list
+ * @return 
+ */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*tempo;

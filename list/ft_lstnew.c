@@ -6,12 +6,18 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:44:02 by rparodi           #+#    #+#             */
-/*   Updated: 2023/11/12 14:25:12 by rparodi          ###   ########.fr       */
+/*   Updated: 2024/10/31 17:52:24 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Allocate a new list with the first element
+ *
+ * @param content the element to give on first element
+ * @return the new list
+ */
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*to_return;
