@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert.h                                          :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rparodi <rparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 14:57:24 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 15:27:40 by rparodi          ###   ########.fr       */
+/*   Created: 2024/10/31 16:14:10 by rparodi           #+#    #+#             */
+/*   Updated: 2024/10/31 16:15:46 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERT_H
-# define CONVERT_H
+#include "libft.h"
 
-# include <stdio.h>
-# include <string.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include <fcntl.h>
+char	*ft_strcpy(char *dst, const char *src)
+{
+	size_t	i;
 
-char			*ft_itoa(int n);
-int				ft_atoi(const char *nptr);
-long long int	ft_atoll(const char *nptr);
-
-#endif
+	i = 0;
+	while (src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
+}

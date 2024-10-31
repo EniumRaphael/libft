@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: rparodi <rparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 17:22:41 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 15:16:10 by rparodi          ###   ########.fr       */
+/*   Created: 2024/10/31 15:12:07 by rparodi           #+#    #+#             */
+/*   Updated: 2024/10/31 15:14:50 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_check_space(int c)
 	return (0);
 }
 
-static int	ft_check_sign(const char *nptr, int *i)
+static int	ft_check_sign(const char *nptr, size_t *i)
 {
 	while (ft_check_space(nptr[*i]))
 		(*i)++;
@@ -34,16 +34,16 @@ static int	ft_check_sign(const char *nptr, int *i)
 }
 
 /**
- * @brief Converts string to integer
+ * @brief Converts string to long long integer
  *
  * @param nptr the string that will be converted
- * @return The integer on the string
+ * @return The long long int on the string
  */
-int	ft_atoi(const char *nptr)
+long long int	ft_atoll(const char *nptr)
 {
-	int	i;
-	int	sign;
-	int	number;
+	size_t			i;
+	int				sign;
+	long long int	number;
 
 	i = 0;
 	sign = ft_check_sign(nptr, &i);

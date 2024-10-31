@@ -6,7 +6,7 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2024/10/31 12:39:34 by rparodi          ###   ########.fr        #
+#    Updated: 2024/10/31 16:15:59 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,48 +33,52 @@ LDLIBS = -lft
 INCLUDES =	./includes/
 
 SRC =	char/ft_isdigit.c \
+		char/ft_isalnum.c \
+		char/ft_isalpha.c \
 		char/ft_isascii.c \
 		char/ft_isprint.c \
-		char/ft_toupper.c \
-		char/ft_isalpha.c \
-		char/ft_isalnum.c \
 		char/ft_tolower.c \
-		memory/ft_memcmp.c \
-		memory/ft_bzero.c \
-		memory/ft_memcpy.c \
-		memory/ft_memchr.c \
-		memory/ft_memset.c \
-		memory/ft_memmove.c \
-		memory/ft_calloc.c \
-		print/ft_putstr_fd.c \
-		print/ft_putnbr_fd.c \
-		print/ft_putendl_fd.c \
-		print/ft_putchar_fd.c \
+		char/ft_toupper.c \
+		convert/ft_atoi.c \
+		convert/ft_atoll.c \
+		convert/ft_itoa.c \
 		list/ft_lstadd_back.c \
-		list/ft_lstnew.c \
-		list/ft_lstlast.c \
-		list/ft_lstclear.c \
-		list/ft_lstiter.c \
-		list/ft_lstmap.c \
-		list/ft_lstsize.c \
 		list/ft_lstadd_front.c \
+		list/ft_lstclear.c \
 		list/ft_lstdelone.c \
-		str/ft_strnstr.c \
-		str/ft_strlcpy.c \
-		str/ft_strlen.c \
+		list/ft_lstiter.c \
+		list/ft_lstlast.c \
+		list/ft_lstmap.c \
+		list/ft_lstnew.c \
+		list/ft_lstsize.c \
+		memory/ft_bzero.c \
+		memory/ft_calloc.c \
+		memory/ft_memchr.c \
+		memory/ft_memcmp.c \
+		memory/ft_memcpy.c \
+		memory/ft_memmove.c \
+		memory/ft_memset.c \
+		print/ft_printf.c \
+		print/ft_put.c \
+		print/ft_putchar_fd.c \
+		print/ft_putendl_fd.c \
+		print/ft_putnbr_fd.c \
+		print/ft_putstr_fd.c \
+		str/ft_split.c \
 		str/ft_strchr.c \
+		str/ft_strcpy.c \
+		str/ft_strdup.c \
 		str/ft_striteri.c \
 		str/ft_strjoin.c \
-		str/ft_split.c \
-		str/ft_strrchr.c \
-		str/ft_substr.c \
-		str/ft_strncmp.c \
-		str/ft_strmapi.c \
-		str/ft_strtrim.c \
 		str/ft_strlcat.c \
-		str/ft_strdup.c \
-		convert/ft_atoi.c \
-		convert/ft_itoa.c
+		str/ft_strlcpy.c \
+		str/ft_strlen.c \
+		str/ft_strmapi.c \
+		str/ft_strncmp.c \
+		str/ft_strnstr.c \
+		str/ft_strrchr.c \
+		str/ft_strtrim.c \
+		str/ft_substr.c
 
 # Objects
 OBJDIRNAME = ./objects
