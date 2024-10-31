@@ -6,69 +6,160 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2023/12/27 18:32:57 by raphael          ###   ########.fr        #
+#    Updated: 2024/10/31 12:39:34 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=libft.a
-CC=clang
-CFLAGS=-Wall -Wextra -Werror -g2
-RM=rm -f
-LDFLAGS=-L.
-LDLIBS=-lft
-SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-SRCBonus = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
-OBJ = $(SRC:.c=.o)
-OBJBonus = $(SRCBonus:.c=.o)
+# Variables
 
+# Name
+NAME=libft.a
+
+# Commands
+CC = cc
+RM = rm -rf
+
+# Flags
+CFLAGS = -Werror -Wextra -Wall
+CFLAGS += -g3 -MMD
+# CFLAGS += -lm
+
+# CFLAGS += -fsanitize=address
+# CFLAGS += -fsanitize=thread
+
+LDFLAGS = -L.
+LDLIBS = -lft
+
+INCLUDES =	./includes/
+
+SRC =	char/ft_isdigit.c \
+		char/ft_isascii.c \
+		char/ft_isprint.c \
+		char/ft_toupper.c \
+		char/ft_isalpha.c \
+		char/ft_isalnum.c \
+		char/ft_tolower.c \
+		memory/ft_memcmp.c \
+		memory/ft_bzero.c \
+		memory/ft_memcpy.c \
+		memory/ft_memchr.c \
+		memory/ft_memset.c \
+		memory/ft_memmove.c \
+		memory/ft_calloc.c \
+		print/ft_putstr_fd.c \
+		print/ft_putnbr_fd.c \
+		print/ft_putendl_fd.c \
+		print/ft_putchar_fd.c \
+		list/ft_lstadd_back.c \
+		list/ft_lstnew.c \
+		list/ft_lstlast.c \
+		list/ft_lstclear.c \
+		list/ft_lstiter.c \
+		list/ft_lstmap.c \
+		list/ft_lstsize.c \
+		list/ft_lstadd_front.c \
+		list/ft_lstdelone.c \
+		str/ft_strnstr.c \
+		str/ft_strlcpy.c \
+		str/ft_strlen.c \
+		str/ft_strchr.c \
+		str/ft_striteri.c \
+		str/ft_strjoin.c \
+		str/ft_split.c \
+		str/ft_strrchr.c \
+		str/ft_substr.c \
+		str/ft_strncmp.c \
+		str/ft_strmapi.c \
+		str/ft_strtrim.c \
+		str/ft_strlcat.c \
+		str/ft_strdup.c \
+		convert/ft_atoi.c \
+		convert/ft_itoa.c
+
+# Objects
+OBJDIRNAME = ./objects
+OBJ = $(addprefix $(OBJDIRNAME)/,$(SRC:.c=.o))
+
+# Colors
 GREEN = \033[32m
 GREY = \033[0;90m
 RED = \033[0;31m
 GOLD = \033[38;5;220m
 END = \033[0m
 
-all: header $(NAME)
-		@printf '\n$(GREY) Compilation$(END)$(GREEN) Done$(END)\n'
+# Rules
 
+# All (make all)
+all: header $(NAME) footer
+
+# Bonus (make bonus)
+bonus: header $(OBJ) $(LIB_OBJ) footer
+	@mkdir -p $(OBJDIRNAME)
+	@mkdir -p $(OBJDIRNAME)/$(SRCDIRNAME)
+	@printf '$(GREY) Creating $(END)$(GREEN)$(OBJDIRNAME)$(END)\n'
+	@printf '$(GREY) Be Carefull ur in $(END)$(GREEN)Debug Mode$(END)\n'
+	@cc $(CFLAGS) -D BONUS=1 -o $(NAME) $(OBJ) $(LIB_OBJ)
+
+# Clean (make clean)
+clean:
+	@printf '$(GREY) Removing $(END)$(RED)Objects$(END)\n'
+	@printf '$(GREY) Removing $(END)$(RED)Objects Folder$(END)\n'
+	@$(RM) $(OBJDIRNAME)
+
+# Clean (make fclean)
+fclean: clean
+	@printf '$(GREY) Removing $(END)$(RED)Program$(END)\n'
+	@$(RM) $(NAME)
+	@echo ""
+
+# Restart (make re)
+re: header fclean all
+
+# Dependences for all
+$(NAME): $(OBJ)
+	@mkdir -p $(OBJDIRNAME)
+	@printf '$(GREY) Creating $(END)$(GREEN)$(OBJDIRNAME)$(END)\n'
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+
+# Creating the objects
+$(OBJDIRNAME)/%.o: %.c
+	@mkdir -p $(dir $@)
+	@printf '$(GREY) Compiling $(END)$(GREEN)$<$(END)\n'
+	@cc $(CFLAGS) -o $@ -c $< -I$(INCLUDES)
+
+#	Header
 header:
 		@clear
-		@printf '\n$(GOLD)            *******     *****  ******* $(END)\n'
+		@printf '\n\n'
+		@printf '$(GOLD)            *******     ****** ******* $(END)\n'
 		@printf '$(GOLD)          ******        ***    ******* $(END)\n'
-		@printf '$(GOLD)      *******                 ******* $(END)\n'
-		@printf '$(GOLD)     ******                 ******* $(END)\n'
-		@printf '$(GOLD)  *******                 ******* $(END)\n'
-		@printf '$(GOLD) ********************   *******      * $(END)\n'
-		@printf '$(GOLD) ********************   *******    *** $(END)\n'
-		@printf '$(GOLD)              *******   ******* ****** $(END)\n'
-		@printf '$(GOLD)              ******* $(END)\n'
-		@printf '$(GOLD)              ******* $(END)\n\n'
-		@printf '$(GREY)                                      Made by rparodi$(END)\n\n\n'
+		@printf '$(GOLD)      *******           *      ******* $(END)\n'
+		@printf '$(GOLD)     ******                  ******* $(END)\n'
+		@printf '$(GOLD)  *******                  ******* $(END)\n'
+		@printf '$(GOLD) *******************    *******      * $(END)\n'
+		@printf '$(GOLD) *******************    *******    *** $(END)\n'
+		@printf '$(GOLD)              ******    ******* ****** $(END)\n'
+		@printf '$(GOLD)              ******  $(END)\n'
+		@printf '$(GOLD)              ******  $(END)\n'
+		@printf '$(GREY)                                      Made by rparodi$(END)\n\n'
 
-$(NAME): $(OBJ) $(OBJBonus)
-		@printf '$(GREY) Compiling $(END)$(GOLD)$(NAME)$(END)\n'
-		@ar rc $(NAME) $(OBJ) $(OBJBonus)
-		@ranlib $(NAME)
+#	Footer
+footer:
+		@printf "\n"
+		@printf "$(GOLD)                   ,_     _,$(END)\n"
+		@printf "$(GOLD)                   | \\___//|$(END)\n"
+		@printf "$(GOLD)                   |=6   6=|$(END)\n"
+		@printf "$(GOLD)                   \\=._Y_.=/$(END)\n"
+		@printf "$(GOLD)                    )  \`  (    ,$(END)\n"
+		@printf "$(GOLD)                   /       \\  (('$(END)\n"
+		@printf "$(GOLD)                   |       |   ))$(END)\n"
+		@printf "$(GOLD)                  /| |   | |\\_//$(END)\n"
+		@printf "$(GOLD)                  \\| |._.| |/-\`$(END)\n"
+		@printf "$(GOLD)                   '\"'   '\"'$(END)\n"
+		@printf '              $(GREY)The compilation is$(END) $(GOLD)finish$(END)\n               $(GREY)Have a good $(END)$(GOLD)correction !$(END)\n'
 
-%.o: %.c
-		@printf '$(GREY) Compiling $(END)$(GREEN)$<$(END)\n'
-		@$(CC) -I. -o $@ -c $? $(CFLAGS)
+#	Phony
+.PHONY: all bonus clean fclean re
 
-bonus: $(OBJ) $(OBJBonus)
-		@printf '$(GREY) Compiling $(END)$(GOLD)$(NAME)$(END)\n'
-		@ar rc $(NAME) $(OBJ) $(OBJBonus)
-		@ranlib $(NAME)
-
-
-dev: all bonus clean
-
-clean:
-		@printf '$(GREY) Removing $(END)$(RED)Object$(END)\n'
-		@$(RM) $(OBJ) $(OBJBonus)
-
-fclean: clean
-		@printf '$(GREY) Removing $(END)$(RED)Program$(END)\n'
-		@$(RM) $(NAME)
-
-re: fclean all
-
-.PHONY: all clean bonus fclean re dev header
+-include	${OBJ:.o=.d}
