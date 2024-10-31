@@ -6,14 +6,14 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2024/10/31 16:15:59 by rparodi          ###   ########.fr        #
+#    Updated: 2024/10/31 17:22:49 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Variables
 
 # Name
-NAME=libft.a
+NAME = libft.a
 
 # Commands
 CC = cc
@@ -30,7 +30,7 @@ CFLAGS += -g3 -MMD
 LDFLAGS = -L.
 LDLIBS = -lft
 
-INCLUDES =	./includes/
+INCLUDES =	./includes/libft/
 
 SRC =	char/ft_isdigit.c \
 		char/ft_isalnum.c \
@@ -66,6 +66,7 @@ SRC =	char/ft_isdigit.c \
 		print/ft_putstr_fd.c \
 		str/ft_split.c \
 		str/ft_strchr.c \
+		str/ft_strcmp.c \
 		str/ft_strcpy.c \
 		str/ft_strdup.c \
 		str/ft_striteri.c \
@@ -81,7 +82,7 @@ SRC =	char/ft_isdigit.c \
 		str/ft_substr.c
 
 # Objects
-OBJDIRNAME = ./objects
+OBJDIRNAME = ./build
 OBJ = $(addprefix $(OBJDIRNAME)/,$(SRC:.c=.o))
 
 # Colors
@@ -96,11 +97,12 @@ END = \033[0m
 # All (make all)
 all: header $(NAME) footer
 
+lib: $(NAME)
+
 # Bonus (make bonus)
 bonus: header $(OBJ) $(LIB_OBJ) footer
 	@mkdir -p $(OBJDIRNAME)
 	@mkdir -p $(OBJDIRNAME)/$(SRCDIRNAME)
-	@printf '$(GREY) Creating $(END)$(GREEN)$(OBJDIRNAME)$(END)\n'
 	@printf '$(GREY) Be Carefull ur in $(END)$(GREEN)Debug Mode$(END)\n'
 	@cc $(CFLAGS) -D BONUS=1 -o $(NAME) $(OBJ) $(LIB_OBJ)
 
@@ -122,7 +124,6 @@ re: header fclean all
 # Dependences for all
 $(NAME): $(OBJ)
 	@mkdir -p $(OBJDIRNAME)
-	@printf '$(GREY) Creating $(END)$(GREEN)$(OBJDIRNAME)$(END)\n'
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
