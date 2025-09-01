@@ -6,7 +6,7 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2024/10/31 17:26:05 by rparodi          ###   ########.fr        #
+#    Updated: 2025/09/01 17:44:59 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,21 +16,15 @@
 NAME = libft.a
 
 # Commands
-CC = cc
+CC ?= clang
 RM = rm -rf
 
 # Flags
 CFLAGS = -Werror -Wextra -Wall
-CFLAGS += -g3 -MMD
-# CFLAGS += -lm
 
-# CFLAGS += -fsanitize=address
-# CFLAGS += -fsanitize=thread
+CPPFLAGS = $(addprefix -I, $(INC_DIR)) -MMD -MP
 
-LDFLAGS = -L.
-LDLIBS = -lft
-
-INCLUDES =	./includes/libft/
+INC_DIR = includes
 
 # Objects
 OBJDIRNAME = ./build
@@ -104,7 +98,7 @@ bonus: header $(OBJ) $(LIB_OBJ) footer
 	@mkdir -p $(OBJDIRNAME)
 	@mkdir -p $(OBJDIRNAME)/$(SRCDIRNAME)
 	@printf '$(GREY) Be Carefull ur in $(END)$(GREEN)Debug Mode$(END)\n'
-	@cc $(CFLAGS) -D BONUS=1 -o $(NAME) $(OBJ) $(LIB_OBJ)
+	@$(CC) $(CFLAGS) $(CPPFLAGS) -D BONUS=1 -o $(NAME) $(OBJ) $(LIB_OBJ)
 
 # Clean (make clean)
 clean:
@@ -131,7 +125,7 @@ $(NAME): $(OBJ)
 $(OBJDIRNAME)/%.o: %.c
 	@mkdir -p $(dir $@)
 	@printf '$(GREY) Compiling $(END)$(GREEN)$<$(END)\n'
-	@cc $(CFLAGS) -o $@ -c $< -I$(INCLUDES)
+	@$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
 
 #	Header
 header:
