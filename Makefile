@@ -164,7 +164,21 @@ footer:
 		@printf "$(GOLD)                   '\"'   '\"'$(END)\n"
 		@printf '              $(GREY)The compilation is$(END) $(GOLD)finish$(END)\n               $(GREY)Have a good $(END)$(GOLD)correction !$(END)\n'
 
+clangd:
+	@printf "CompileFlags:\n" > ./.clangd
+	@printf "  Add:\n" >> ./.clangd
+	@printf "    - \"-xc\"\n" >> ./.clangd
+	@for FLAG in $(CXXFLAGS); do \
+		printf "    - \"$$FLAG\"\n" >> ./.clangd; \
+	done
+	@printf "    - \"-I"$(shell pwd)"/\"\n" >> .clangd;
+	@for file in $(INC_DIR); do \
+		printf "    - \"-I"$(shell pwd)"/"$$file"\"\n" >> .clangd; \
+	done
+	@printf "\n" >> ./.clangd
+	@printf '$(GREY) Now parsing settings is set in $(END)$(GREEN)./.clangd$(END)\n'
+
 #	Phony
-.PHONY: all bonus clean fclean re
+.PHONY: all bonus clean fclean re footer header clangd
 
 -include	${OBJ:.o=.d}

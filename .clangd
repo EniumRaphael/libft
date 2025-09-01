@@ -1,4 +1,0 @@
-CompilerFlags:
-  Add:
-    - "-xc"
-    - "-I/Users/raphael/Documents/42_cursus/circle0/libft/includes"
