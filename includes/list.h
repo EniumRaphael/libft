@@ -6,19 +6,12 @@
 /*   By: rparodi <rparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:00:12 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 15:27:20 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 16:34:41 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIST_H
 # define LIST_H
-
-# include <stdio.h>
-# include <string.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include <fcntl.h>
 
 typedef struct s_list
 {

@@ -6,19 +6,14 @@
 /*   By: rparodi <rparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:04:59 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 16:15:39 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 17:56:24 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STR_H
 # define STR_H
 
-# include <stdio.h>
-# include <string.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include <fcntl.h>
+#include <stddef.h>
 
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
