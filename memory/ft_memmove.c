@@ -6,11 +6,11 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:51:35 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 18:15:19 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 16:41:47 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 char	*ft_checks(char *s, char *d, size_t n)
 {

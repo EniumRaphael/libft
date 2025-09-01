@@ -6,11 +6,12 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:55:15 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 18:13:21 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 17:58:58 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "str.h"
+#include <stdlib.h>
 
 /**
  * @brief Joins two strings into a new string.

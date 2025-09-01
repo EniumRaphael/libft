@@ -6,11 +6,11 @@
 /*   By: rparodi <rparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:12:07 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 15:14:50 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 16:32:11 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 static int	ft_check_space(int c)
 {

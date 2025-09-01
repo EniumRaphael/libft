@@ -6,11 +6,12 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:48:30 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 17:59:07 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 16:40:36 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "memory.h"
+#include <unistd.h>
 
 /**
  * @brief Scans memory for a byte

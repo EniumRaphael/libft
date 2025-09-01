@@ -6,11 +6,13 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:56:57 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 18:14:29 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 18:28:51 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "memory.h"
+#include "str.h"
+#include <stdlib.h>
 
 /**
  * @brief Applies a function to each character of a string.

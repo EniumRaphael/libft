@@ -6,11 +6,12 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 22:28:26 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 18:10:19 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 17:52:29 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "str.h"
+#include <unistd.h>
 
 static size_t	ft_strnlen(char *dest, size_t size)
 {

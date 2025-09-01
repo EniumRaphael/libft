@@ -6,11 +6,12 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:54:42 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 18:10:59 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 18:26:29 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "str.h"
+#include <stdlib.h>
 
 /**
  * @brief Extracts a substring from a string.

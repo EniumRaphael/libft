@@ -6,11 +6,12 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:42:54 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 17:48:08 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 16:36:47 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "list.h"
+#include <unistd.h>
 
 /**
  * @brief Found the last element of the chained list

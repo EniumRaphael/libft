@@ -6,11 +6,11 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:40:37 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 17:32:23 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 16:33:31 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "list.h"
 
 /**
  * @brief Clear the all list with the function

@@ -6,11 +6,11 @@
 /*   By: rparodi <rparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 16:14:10 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 18:14:03 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 17:36:18 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 /**
  * @brief Copies a string.

@@ -6,11 +6,11 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:47:28 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 12:54:42 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 18:31:27 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "char.h"
 
 /**
  * @brief Check if the character is alpha-numeric

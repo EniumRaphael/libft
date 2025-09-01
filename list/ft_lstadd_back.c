@@ -6,11 +6,12 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:39:56 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 17:29:37 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 16:35:17 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "list.h"
+#include <unistd.h>
 
 /**
  * @brief Add the list new to the back of chained list of lst

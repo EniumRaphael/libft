@@ -6,11 +6,12 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:44:02 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 17:52:24 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 16:39:00 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "list.h"
+#include <stdlib.h>
 
 /**
  * @brief Allocate a new list with the first element

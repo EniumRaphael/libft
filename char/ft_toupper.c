@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+
 
 /**
  * @brief convert the lower case to upper case

@@ -6,11 +6,12 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:56:30 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 13:02:55 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 16:30:01 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "str.h"
+#include "memory.h"
 
 static size_t	ft_check_sign(char *str, long *nb)
 {

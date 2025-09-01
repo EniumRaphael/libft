@@ -6,11 +6,12 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:42:11 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 17:46:00 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 16:36:07 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "list.h"
+#include <stdlib.h>
 
 /**
  * @brief Clear the element of the list with the function

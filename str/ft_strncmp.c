@@ -6,11 +6,11 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:56:56 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 18:13:58 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 17:54:01 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 /**
  * @brief Compares two strings up to a specified number of characters.

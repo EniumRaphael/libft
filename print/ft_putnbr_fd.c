@@ -6,11 +6,13 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:59:18 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 18:04:17 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 17:47:41 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "print.h"
+#include "memory.h"
+#include <unistd.h>
 
 static int	ft_check_sign(int n, char *str, size_t *i, int fd)
 {

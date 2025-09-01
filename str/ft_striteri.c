@@ -6,11 +6,11 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:57:34 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 18:11:04 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 17:50:26 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 /**
  * @brief Applies a function to each character of a string.

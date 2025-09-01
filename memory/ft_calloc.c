@@ -6,11 +6,12 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:47:17 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 17:55:30 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 18:28:34 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "memory.h"
+#include <stdlib.h>
 
 /**
  * @brief Allocates and zeroes memory for an array

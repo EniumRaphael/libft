@@ -6,11 +6,14 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:27:44 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 18:01:28 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 17:58:00 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "str.h"
+#include <stdarg.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 void	_print_char(int fd, char c, int *ret_value);
 void	_print_nbr(int fd, int nb, int *ret_value);

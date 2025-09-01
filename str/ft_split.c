@@ -6,11 +6,11 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:56:02 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 18:13:39 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 17:49:19 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 static int	count_words(const char *str, char sep)
 {

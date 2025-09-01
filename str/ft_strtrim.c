@@ -6,11 +6,12 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:55:44 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 18:09:25 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/01 18:26:20 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "str.h"
+#include <stdlib.h>
 
 /**
  * @brief Trims specified characters from the start and end of a string.
