@@ -6,11 +6,9 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:06:53 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 12:50:37 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/04 11:41:49 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 /**
  * @brief Check if the character is printable

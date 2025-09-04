@@ -6,11 +6,9 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:38:54 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 12:55:28 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/04 11:42:13 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 /**
  * @brief convert the upper case to lower case

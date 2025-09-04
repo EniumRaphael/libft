@@ -6,11 +6,9 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:04:26 by rparodi           #+#    #+#             */
-/*   Updated: 2024/10/31 12:49:55 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/04 11:41:42 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 /**
  * @brief Check if the character is in the ascii table
