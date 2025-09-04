@@ -6,13 +6,13 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:51:35 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/01 16:41:47 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/04 11:56:02 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_checks(char *s, char *d, size_t n)
+static char	*ft_checks(char *s, char *d, size_t n)
 {
 	size_t	i;
 
