@@ -6,14 +6,14 @@
 /*   By: rparodi <rparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:18:17 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/01 18:28:18 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/04 11:51:05 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MEMORY_H
 # define MEMORY_H
 
-#include <stddef.h>
+# include <stddef.h>
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
