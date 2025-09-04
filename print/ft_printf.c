@@ -6,7 +6,7 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:27:44 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/04 11:46:29 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/04 11:56:27 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	_print_base(\
 void	_print_unsigned(int fd, unsigned int nb, int *ret);
 void	_print_str(int fd, char *str, int *ret);
 
-int	_check_args(int fd, char c, va_list args, int *ret)
+static int	_check_args(int fd, char c, va_list args, int *ret)
 {
 	if (c == 'c')
 		_print_char(fd, (char)va_arg(args, int), ret);
