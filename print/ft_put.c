@@ -6,7 +6,7 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:13:14 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/01 17:57:36 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/04 11:46:53 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,54 +14,55 @@
 #include <limits.h>
 #include <unistd.h>
 
-void	_print_char(int fd, char c, int *ret_value)
+void	_print_char(int fd, char c, int *ret)
 {
 	write(fd, &c, 1);
-	(*ret_value)++;
+	(*ret)++;
 }
 
-void	_print_unsigned(int fd, unsigned int nb, int *ret_value)
+void	_print_unsigned(int fd, unsigned int nb, int *ret)
 {
 	if (nb >= 10)
 	{
-		_print_unsigned(fd, nb / 10, ret_value);
+		_print_unsigned(fd, nb / 10, ret);
 		nb = nb % 10;
 	}
 	if (nb < 10)
-		_print_char(fd, nb + 48, ret_value);
+		_print_char(fd, nb + 48, ret);
 }
 
-void	_print_str(int fd, char *str, int *ret_value)
+void	_print_str(int fd, char *str, int *ret)
 {
 	if (!str)
-		*ret_value += write(fd, "(null)", 6);
+		*ret += write(fd, "(null)", 6);
 	else
-		*ret_value += write(fd, str, ft_strlen(str));
+		*ret += write(fd, str, ft_strlen(str));
 }
 
-void	_print_nbr(int fd, int nb, int *ret_value)
+void	_print_nbr(int fd, int nb, int *ret)
 {
 	if (nb < 0)
 	{
 		if (nb == INT_MIN)
 		{
 			write(1, "-2147483648", 11);
-			*ret_value += 11;
+			*ret += 11;
 			return ;
 		}
 		nb = -nb;
-		_print_char(fd, '-', ret_value); }
+		_print_char(fd, '-', ret);
+	}
 	if (nb >= 10)
 	{
-		_print_nbr(fd, nb / 10, ret_value);
+		_print_nbr(fd, nb / 10, ret);
 		nb = nb % 10;
 	}
 	if (nb < 10)
-		_print_char(fd, nb + 48, ret_value);
+		_print_char(fd, nb + 48, ret);
 }
 
 void	_print_base(\
-		int fd, unsigned long long nbr, int *ret_value, char c)
+		int fd, unsigned long long nbr, int *ret, char c)
 {
 	char	base[16];
 
@@ -72,10 +73,10 @@ void	_print_base(\
 	else if (c == 'p')
 	{
 		if (nbr != 0)
-			_print_str(fd, "0x", ret_value);
+			_print_str(fd, "0x", ret);
 		else if (nbr == 0)
 		{
-			_print_str(fd, "(nil)", ret_value);
+			_print_str(fd, "(nil)", ret);
 			return ;
 		}
 		else
@@ -85,7 +86,7 @@ void	_print_base(\
 	if (c != 'p')
 	{
 		if (nbr >= 16)
-			_print_base(fd, nbr / 16, ret_value, c);
-		_print_char(fd, base[nbr % 16], ret_value);
+			_print_base(fd, nbr / 16, ret, c);
+		_print_char(fd, base[nbr % 16], ret);
 	}
 }
