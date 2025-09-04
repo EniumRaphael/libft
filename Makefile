@@ -110,6 +110,7 @@ clean:
 fclean: clean
 	@printf '$(GREY) Removing $(END)$(RED)Program$(END)\n'
 	@$(RM) $(NAME)
+	@$(RM) ./.test/
 	@echo ""
 
 # Restart (make re)
@@ -156,7 +157,24 @@ footer:
 		@printf "$(GOLD)                  /| |   | |\\_//$(END)\n"
 		@printf "$(GOLD)                  \\| |._.| |/-\`$(END)\n"
 		@printf "$(GOLD)                   '\"'   '\"'$(END)\n"
-		@printf '              $(GREY)The compilation is$(END) $(GOLD)finish$(END)\n               $(GREY)Have a good $(END)$(GOLD)correction !$(END)\n'
+		@printf '              $(GREY)The compilation is$(END) $(GOLD)finished$(END)\n               $(GREY)Have a good $(END)$(GOLD)correction !$(END)\n'
+
+TEST_SRCS := $(shell find test -type f -name '*.c' 2>/dev/null)
+
+TEST_BINS := $(patsubst test/%.c,.test/%,$(TEST_SRCS))
+
+test: all $(LIB_NAME) $(TEST_BINS) test-run footer
+
+.test/%: test/%.c $(LIB_NAME)
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) $(CPPFLAGS) $< -L. -lft $(LDFLAGS) -o $@
+
+test-run:
+	@set -e; \
+	for t in $(TEST_BINS); do \
+		printf "\n\n$(GREY)>> Running $(GOLD)$$t$(END)\n"; \
+		TERM=xterm $$t; \
+	done; \
 
 clangd:
 	@printf "CompileFlags:\n" > ./.clangd
