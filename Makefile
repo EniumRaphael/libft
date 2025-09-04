@@ -6,7 +6,7 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2025/09/01 17:44:59 by rparodi          ###   ########.fr        #
+#    Updated: 2025/09/04 18:48:57 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,9 @@ RM = rm -rf
 # Flags
 CFLAGS = -Werror -Wextra -Wall
 
+INC_DIR = includes
 CPPFLAGS = $(addprefix -I, $(INC_DIR)) -MMD -MP
 
-INC_DIR = includes
 
 # Objects
 OBJDIRNAME = ./build
