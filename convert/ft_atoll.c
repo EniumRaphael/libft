@@ -6,7 +6,7 @@
 /*   By: rparodi <rparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:12:07 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/05 14:54:50 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/05 16:08:14 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,6 @@ static int	ft_check_sign(const char *nptr, size_t *i)
 	return (1);
 }
 
-/**
- * @brief Converts string to long long integer
- *
- * @param nptr the string that will be converted
- * @return The long long int on the string
- */
 long long int	ft_atoll(const char *nptr)
 {
 	size_t			i;
