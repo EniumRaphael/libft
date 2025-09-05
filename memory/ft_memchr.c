@@ -6,23 +6,13 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:48:30 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/01 16:40:36 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/05 16:26:04 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "memory.h"
 #include <unistd.h>
 
-/**
- * @brief Scans memory for a byte
- * 
- * @param s Pointer to the memory area to scan
- * @param c Byte value to search for
- * @param n Number of bytes to scan in s
- * 
- * @return A pointer to the matching byte in memory, or NULL if the byte
-is not found within the first n bytes
- */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;

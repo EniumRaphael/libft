@@ -6,7 +6,7 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:22:41 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/05 14:34:51 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/05 16:08:14 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,6 @@ static int	ft_check_sign(const char *nptr, int *i)
 	return (1);
 }
 
-/**
- * @brief Converts string to integer
- *
- * @param nptr the string that will be converted
- * @return The integer on the string
- */
 int	ft_atoi(const char *nptr)
 {
 	int	i;

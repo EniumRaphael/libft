@@ -6,7 +6,7 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:59:18 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/01 17:47:41 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/05 16:23:43 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,6 @@ static int	ft_check_sign(int n, char *str, size_t *i, int fd)
 	return (n);
 }
 
-/**
- * @brief Print a number on a file descriptor
- *
- * @param n the number to print
- * @param fd the file descriptor
- */
 void	ft_putnbr_fd(int n, int fd)
 {
 	size_t		i;

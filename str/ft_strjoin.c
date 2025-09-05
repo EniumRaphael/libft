@@ -6,22 +6,13 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:55:15 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/01 17:58:58 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/05 16:17:50 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "str.h"
 #include <stdlib.h>
 
-/**
- * @brief Joins two strings into a new string.
- * 
- * @param s1 The first string.
- * @param s2 The second string.
- * 
- * @return A pointer to the new concatenated string,
- * or NULL if memory allocation fails.
- */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;

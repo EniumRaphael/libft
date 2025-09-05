@@ -6,7 +6,7 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2025/09/05 15:10:23 by rparodi          ###   ########.fr        #
+#    Updated: 2025/09/05 16:21:13 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,10 +30,10 @@ CPPFLAGS = $(addprefix -I, $(INC_DIR)) -MMD -MP
 OBJDIRNAME = ./build
 OBJ = $(addprefix $(OBJDIRNAME)/,$(SRC:.c=.o))
 
-SRC =	char/ft_isdigit.c \
-		char/ft_isalnum.c \
+SRC =	char/ft_isalnum.c \
 		char/ft_isalpha.c \
 		char/ft_isascii.c \
+		char/ft_isdigit.c \
 		char/ft_isprint.c \
 		char/ft_tolower.c \
 		char/ft_toupper.c \
@@ -74,6 +74,7 @@ SRC =	char/ft_isdigit.c \
 		str/ft_strlen.c \
 		str/ft_strmapi.c \
 		str/ft_strncmp.c \
+		str/ft_strncpy.c \
 		str/ft_strnstr.c \
 		str/ft_strrchr.c \
 		str/ft_strtrim.c \
