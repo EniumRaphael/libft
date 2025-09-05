@@ -53,3 +53,8 @@ Module.symvers
 Mkfile.old
 dkms.conf
 .clangd
+
+# Nix files
+*.lock
+.envrc
+.direnv/
