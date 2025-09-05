@@ -6,21 +6,12 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:56:56 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/01 17:54:01 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/05 16:17:50 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-/**
- * @brief Compares two strings up to a specified number of characters.
- * 
- * @param s1 The first string to compare.
- * @param s2 The second string to compare.
- * @param n The maximum number of characters to compare.
- * 
- * @return An integer indicating the relationship between the two strings.
- */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;

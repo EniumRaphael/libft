@@ -6,23 +6,12 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:56:56 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/01 17:50:06 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/05 16:21:46 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-/**
- * @brief Compares two strings lexicographically.
- * 
- * @param s1 The first string to compare.
- * @param s2 The second string to compare.
- * 
- * @return An integer indicating the relationship between the two strings:
- *         - `< 0` if `s1` is less than `s2`.
- *         - `0` if `s1` equals `s2`.
- *         - `> 0` if `s1` is greater than `s2`.
- */
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t	i;

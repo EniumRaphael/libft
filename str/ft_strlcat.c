@@ -6,7 +6,7 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 22:28:26 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/01 17:52:29 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/05 16:17:50 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,6 @@ static size_t	ft_strnlen(char *dest, size_t size)
 	return (i);
 }
 
-/**
- * @brief Appends a string with size limit.
- * 
- * @param dst The destination buffer.
- * @param src The source string.
- * @param size The size of the destination buffer.
- * 
- * @return The total length of the string it tried to create.
- */
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;

@@ -6,21 +6,13 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:55:44 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/01 18:26:20 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/05 16:16:46 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "str.h"
 #include <stdlib.h>
 
-/**
- * @brief Trims specified characters from the start and end of a string.
- * 
- * @param s1 The string to trim.
- * @param set The set of characters to remove.
- * 
- * @return A pointer to the trimmed string, or NULL if memory allocation fails.
- */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
