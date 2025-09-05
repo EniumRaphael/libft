@@ -6,7 +6,7 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:22:41 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/04 11:39:58 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/05 14:34:51 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	ft_atoi(const char *nptr)
 	int	sign;
 	int	number;
 
+	if (!nptr)
+		return (0);
 	i = 0;
 	sign = ft_check_sign(nptr, &i);
 	number = 0;

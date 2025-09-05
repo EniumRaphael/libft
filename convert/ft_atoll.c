@@ -6,7 +6,7 @@
 /*   By: rparodi <rparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:12:07 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/01 16:32:11 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/05 14:54:50 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ long long int	ft_atoll(const char *nptr)
 	int				sign;
 	long long int	number;
 
+	if (!nptr)
+		return (0);
 	i = 0;
 	sign = ft_check_sign(nptr, &i);
 	number = 0;
