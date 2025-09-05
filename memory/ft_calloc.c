@@ -6,19 +6,13 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:47:17 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/01 18:28:34 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/05 16:25:35 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "memory.h"
 #include <stdlib.h>
 
-/**
- * @brief Allocates and zeroes memory for an array
- *
- * @param nmemb Number of elements to allocate
- * @param size Size of each element in bytes
- */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	size_t	total;

@@ -6,21 +6,12 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:49:46 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/01 16:41:32 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/05 16:26:04 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-/**
- * @brief Copies memory from source to destination
- * 
- * @param dest Pointer to the destination memory area
- * @param src Pointer to the source memory area
- * @param n Number of bytes to copy from src to dest
- * 
- * @return A pointer to the destination memory area dest
- */
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	char		*d;

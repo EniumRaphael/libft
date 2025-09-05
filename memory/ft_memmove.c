@@ -6,7 +6,7 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:51:35 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/04 11:56:02 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/05 16:26:53 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,6 @@ static char	*ft_checks(char *s, char *d, size_t n)
 	return (d);
 }
 
-/**
- * @brief Copies memory with overlap handling
- * 
- * @param dest Pointer to the destination memory area
- * @param src Pointer to the source memory area
- * @param n Number of bytes to copy from src to dest
- * 
- * @return A pointer to the destination memory area dest
- */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char	*d;
