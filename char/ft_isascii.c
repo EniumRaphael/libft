@@ -6,16 +6,10 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:04:26 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/05 10:40:03 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/05 16:01:13 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * @brief Check if the character is in the ascii table
- *
- * @param c the character
- * @return the character if in the ascii table or 0 if not
- */
 int	ft_isascii(int c)
 {
 	if (c == 0)
