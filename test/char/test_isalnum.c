@@ -25,7 +25,7 @@ int	main(void)
 	{
 		if (ft_isalnum(c) != isalnum(c))
 		{
-			printf("%s✘ Found %i, excepted %i%s\n", CLR_RED, ft_isalnum(c),
+			printf("%s✘ Found %i, expected %i%s\n", CLR_RED, ft_isalnum(c),
 				isalnum(c), RESET);
 			exit(1);
 		}

@@ -25,7 +25,7 @@ int	main(void)
 	{
 		if (ft_toupper(c) != toupper(c))
 		{
-			printf("%s✘ Found %i, excepted %i%s\n", CLR_RED, ft_toupper(c),
+			printf("%s✘ Found %i, expected %i%s\n", CLR_RED, ft_toupper(c),
 				toupper(c), RESET);
 			exit(1);
 		}

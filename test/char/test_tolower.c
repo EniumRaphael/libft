@@ -25,7 +25,7 @@ int	main(void)
 	{
 		if (ft_tolower(c) != tolower(c))
 		{
-			printf("%s✘ Found %i, excepted %i%s\n", CLR_RED, ft_tolower(c),
+			printf("%s✘ Found %i, expected %i%s\n", CLR_RED, ft_tolower(c),
 				tolower(c), RESET);
 			exit(1);
 		}

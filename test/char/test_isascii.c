@@ -25,7 +25,7 @@ int	main(void)
 	{
 		if (ft_isascii(c) != isascii(c))
 		{
-			printf("%s✘ Found %i, excepted %i%s\n", CLR_RED, ft_isascii(c),
+			printf("%s✘ Found %i, expected %i%s\n", CLR_RED, ft_isascii(c),
 				isascii(c), RESET);
 			exit(1);
 		}
