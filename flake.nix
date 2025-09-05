@@ -3,9 +3,9 @@
 
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
-    c_formatter_42.url = "github:maix0/c_formatter_42-flake";
+    c_formatter_42.url = "github:maix-flake/c_formatter_42";
   };
-  outputs = { self, nixpkgs, flake-utils, c_formatter_42, }:
+  outputs = { self, nixpkgs, flake-utils, c_formatter_42 }:
     flake-utils.lib.eachDefaultSystem (system:
       let pkgs = nixpkgs.legacyPackages.${system};
       in {
@@ -16,7 +16,6 @@
             pkgs.clang-tools
             pkgs.fastmod
             pkgs.norminette
-            pkgs.valgrind
             pkgs.tree
           ] ++ (if pkgs.stdenv.isLinux then [ pkgs.valgrind ] else [ ]);
         };
