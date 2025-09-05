@@ -6,7 +6,7 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2025/09/04 18:48:57 by rparodi          ###   ########.fr        #
+#    Updated: 2025/09/05 15:10:23 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -163,15 +163,15 @@ TEST_SRCS := $(shell find test -type f -name '*.c' 2>/dev/null)
 
 TEST_BINS := $(patsubst test/%.c,.test/%,$(TEST_SRCS))
 
-test: all $(LIB_NAME) $(TEST_BINS) test-run footer
+test: fclean $(NAME) $(TEST_BINS) test-run footer
 
 .test/%: test/%.c $(LIB_NAME)
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(CPPFLAGS) $< -L. -lft $(LDFLAGS) -o $@
 
 test-run:
-	@set -e; \
-	for t in $(TEST_BINS); do \
+	@set -e
+	@for t in $(TEST_BINS); do \
 		printf "\n\n$(GREY)>> Running $(GOLD)$$t$(END)\n"; \
 		TERM=xterm $$t; \
 	done; \
