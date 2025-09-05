@@ -25,7 +25,7 @@ int	main(void)
 	{
 		if (ft_isdigit(c) != isdigit(c))
 		{
-			printf("%s✘ Found %i, excepted %i%s\n", CLR_RED, ft_isdigit(c),
+			printf("%s✘ Found %i, expected %i%s\n", CLR_RED, ft_isdigit(c),
 				isdigit(c), RESET);
 			exit(1);
 		}

@@ -25,7 +25,7 @@ int	main(void)
 	{
 		if (ft_isalpha(c) != isalpha(c))
 		{
-			printf("%s✘ Found %i, excepted %i%s\n", CLR_RED, ft_isalpha(c),
+			printf("%s✘ Found %i, expected %i%s\n", CLR_RED, ft_isalpha(c),
 				isalpha(c), RESET);
 			exit(1);
 		}

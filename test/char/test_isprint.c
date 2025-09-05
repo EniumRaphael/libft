@@ -25,7 +25,7 @@ int	main(void)
 	{
 		if (ft_isprint(c) != isprint(c))
 		{
-			printf("%s✘ Found %i, excepted %i%s\n", CLR_RED, ft_isprint(c),
+			printf("%s✘ Found %i, expected %i%s\n", CLR_RED, ft_isprint(c),
 				isprint(c), RESET);
 			exit(1);
 		}
