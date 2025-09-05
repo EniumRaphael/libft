@@ -6,7 +6,7 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:27:44 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/04 11:56:27 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/05 16:23:43 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,6 @@ static int	_check_args(int fd, char c, va_list args, int *ret)
 	return (1);
 }
 
-/**
- * @brief Print on a file descriptor
- *
- * @param fd the file descriptor
- * @param s the string
- * @return the number of character printable
- */
 int	ft_dprintf(int fd, const char *s, ...)
 {
 	size_t	i;
@@ -77,12 +70,6 @@ int	ft_dprintf(int fd, const char *s, ...)
 	return (ret);
 }
 
-/**
- * @brief Print on the standard output
- *
- * @param s the string
- * @return the number of character printable
- */
 int	ft_printf(const char *s, ...)
 {
 	size_t	i;
