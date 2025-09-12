@@ -6,7 +6,7 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:22:41 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/08 10:16:01 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/12 15:24:43 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ size_t	ft_atou(const char *nptr)
 
 	if (!nptr)
 		return (0);
+	while (ft_check_space(nptr[i]))
+		i++;
 	i = 0;
 	number = 0;
 	while (nptr[i])
