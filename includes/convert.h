@@ -6,7 +6,7 @@
 /*   By: rparodi <rparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 14:57:24 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/08 10:17:01 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/17 16:40:58 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int				ft_atoi(const char *nptr);
  * @param nptr the string that will be converted
  * @return The unsigned long long on the string
  */
-size_t	ft_atou(const char *nptr);
+size_t			ft_atou(const char *nptr);
 
 /**
  * @brief Converts string to long long integer
