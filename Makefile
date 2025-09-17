@@ -6,7 +6,7 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2025/09/05 16:21:13 by rparodi          ###   ########.fr        #
+#    Updated: 2025/09/17 16:39:23 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,11 @@ SRC =	char/ft_isalnum.c \
 		list/ft_lstmap.c \
 		list/ft_lstnew.c \
 		list/ft_lstsize.c \
+		math/ft_max.c \
+		math/ft_min.c \
+		math/ft_power.c \
+		math/ft_abs.c \
+		math/ft_sqrt.c \
 		memory/ft_bzero.c \
 		memory/ft_calloc.c \
 		memory/ft_memchr.c \
