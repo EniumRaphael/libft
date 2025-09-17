@@ -6,21 +6,21 @@
 /*   By: rparodi <rparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 16:30:27 by rparodi           #+#    #+#             */
-/*   Updated: 2025/09/17 16:37:00 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/09/17 16:44:28 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdint.h>
 #include <stdio.h>
 
-uint64_t	ft_sqrt(uint64_t nb)
+uint64_t	ft_sqrt(uint64_t number)
 {
 	uint64_t	i;
 
 	i = 1;
-	while ((i * i) <= nb && i <= 4294967296)
+	while ((i * i) <= number && i <= 4294967296)
 	{
-		if ((i * i) == nb)
+		if ((i * i) == number)
 			return (i);
 		i++;
 	}
