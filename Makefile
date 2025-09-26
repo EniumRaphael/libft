@@ -6,7 +6,7 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2025/09/17 16:39:23 by rparodi          ###   ########.fr        #
+#    Updated: 2025/09/27 00:07:51 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@
 
 # Name
 NAME = libft.a
+PROJECT = libft
 
 # Commands
 CC ?= clang
@@ -133,6 +134,16 @@ $(OBJDIRNAME)/%.o: %.c
 	@mkdir -p $(dir $@)
 	@printf '$(GREY) Compiling $(END)$(GREEN)$<$(END)\n'
 	@$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
+
+tmux:
+	@tmux new-session -d -s $(PROJECT)
+	@tmux send-keys -t $(PROJECT):0 'vim' C-m
+	@tmux split-window -h -t $(PROJECT):0
+	@tmux resize-pane -t $(PROJECT):0.0 -x 70
+	@tmux new-window -t $(PROJECT):1 -n 'lazygit'
+	@tmux send-keys -t $(PROJECT):1 'lazygit' C-m
+	@tmux select-window -t $(PROJECT):0
+	@tmux attach-session -t $(PROJECT)
 
 #	Header
 header:
