@@ -6,7 +6,7 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2025/09/27 00:07:51 by rparodi          ###   ########.fr        #
+#    Updated: 2025/11/03 14:12:04 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SRC =	char/ft_isalnum.c \
 		char/ft_toupper.c \
 		convert/ft_atoi.c \
 		convert/ft_atoll.c \
+		convert/ft_atou.c \
 		convert/ft_itoa.c \
 		list/ft_lstadd_back.c \
 		list/ft_lstadd_front.c \
@@ -50,10 +51,10 @@ SRC =	char/ft_isalnum.c \
 		list/ft_lstmap.c \
 		list/ft_lstnew.c \
 		list/ft_lstsize.c \
+		math/ft_abs.c \
 		math/ft_max.c \
 		math/ft_min.c \
 		math/ft_power.c \
-		math/ft_abs.c \
 		math/ft_sqrt.c \
 		memory/ft_bzero.c \
 		memory/ft_calloc.c \
@@ -208,6 +209,6 @@ clangd:
 	@printf '$(GREY) Now parsing settings is set in $(END)$(GREEN)./.clangd$(END)\n'
 
 #	Phony
-.PHONY: all bonus clean fclean re footer header clangd
+.PHONY: all bonus clean fclean re footer header clangd tmux test
 
 -include	${OBJ:.o=.d}
