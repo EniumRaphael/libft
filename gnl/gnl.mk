@@ -6,7 +6,7 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2025/11/26 17:14:21 by rparodi          ###   ########.fr        #
+#    Updated: 2025/12/11 16:51:41 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ MODULE_NAME = gnl
 NAME = lib$(MODULE_NAME).a
 
 SRC =	get_next_line_utils.c \
+		get_next_line_free.c \
 		get_next_line.c
 
 CC ?= clang
