@@ -6,7 +6,7 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2025/12/11 16:04:27 by rparodi          ###   ########.fr        #
+#    Updated: 2025/12/11 16:29:54 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,14 @@ all:
 	@for PART in $(SUB_MAKEFILE); do \
 		$(MAKE) -f $$PART all; \
 	done
+	@( printf 'CREATE $(OBJDIRNAME)/$(NAME)\n'; \
+		for f in build/*.a; do \
+			[ -e "$$f" ] || continue; \
+			[ "$$(basename "$$f")" = "$(NAME)" ] && continue; \
+			printf 'ADDLIB %s\n' "$$f"; \
+		done; \
+		printf 'SAVE\nEND\n' ) | ar -M
+	@printf '$(GREY) Linking $(END)$(GOLD)$(NAME)$(END)\n'
 
 clean:
 	@for PART in $(SUB_MAKEFILE); do \
@@ -64,8 +72,6 @@ re: fclean all
 
 $(NAME): $(OBJ)
 	@mkdir -p $(OBJDIRNAME)
-	@ar rc $(OBJDIRNAME)/$(NAME) $(OBJ)
-	@ranlib -M $(OBJDIRNAME)/$(NAME)
 
 .PHONY: all bonus clean fclean re
 

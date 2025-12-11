@@ -6,7 +6,7 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2025/12/11 14:40:31 by rparodi          ###   ########.fr        #
+#    Updated: 2025/12/11 16:34:31 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,9 @@ RM = rm -rf
 # Flags
 CFLAGS = -Werror -Wextra -Wall
 
-INC_DIR = includes
+INC_DIR = includes/libft
 CPPFLAGS = $(addprefix -I, $(INC_DIR)) -MMD -MP
+LDFLAGS = -L $(OBJDIRNAME) -lft
 
 # Objects
 OBJDIRNAME = ./build
@@ -40,45 +41,23 @@ END = \033[0m
 # Rules
 
 # All (make all)
-all: header lib $(NAME) footer
+all: header lib footer
 
 lib:
 	@make --no-print-directory -f ./libft.mk
 
-# Bonus (make bonus)
-bonus: header $(OBJ) $(LIB_OBJ) footer
-	@mkdir -p $(OBJDIRNAME)
-	@mkdir -p $(OBJDIRNAME)/$(SRCDIRNAME)
-	@printf '$(GREY) Be Carefull ur in $(END)$(GREEN)Debug Mode$(END)\n'
-	@$(CC) $(CFLAGS) $(CPPFLAGS) -D BONUS=1 -o $(NAME) $(OBJ) $(LIB_OBJ)
-
-# Clean (make clean)
 clean:
 	@printf '$(GREY) Removing $(END)$(RED)Objects$(END)\n'
 	@printf '$(GREY) Removing $(END)$(RED)Objects Folder$(END)\n'
 	@$(RM) $(OBJDIRNAME)
 
-# Clean (make fclean)
 fclean: clean
 	@printf '$(GREY) Removing $(END)$(RED)Program$(END)\n'
 	@$(RM) $(NAME)
 	@$(RM) ./.test/
 	@echo ""
 
-# Restart (make re)
-re: header fclean all
-
-# Dependences for all
-$(NAME): $(OBJ)
-	@mkdir -p $(OBJDIRNAME)
-	@ar rc $(NAME) $(OBJ)
-	@ranlib $(NAME)
-
-# Creating the objects
-$(OBJDIRNAME)/%.o: %.c
-	@mkdir -p $(dir $@)
-	@printf '$(GREY) Compiling $(END)$(GREEN)$<$(END)\n'
-	@$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
+re: header fclean lib
 
 tmux:
 	@tmux new-session -d -s $(PROJECT)
@@ -125,11 +104,11 @@ TEST_SRCS := $(shell find test -type f -name '*.c' 2>/dev/null)
 
 TEST_BINS := $(patsubst test/%.c,.test/%,$(TEST_SRCS))
 
-test: fclean $(NAME) $(TEST_BINS) test-run footer
+test: fclean $(TEST_BINS) test-run footer
 
-.test/%: test/%.c $(LIB_NAME)
+.test/%: test/%.c lib $(LIB_NAME)
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) $(CPPFLAGS) $< -L. -lft $(LDFLAGS) -o $@
+	@$(CC) $(CFLAGS) $(CPPFLAGS) $< $(LDFLAGS) -o $@
 
 test-run:
 	@set -e
