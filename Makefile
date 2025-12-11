@@ -6,7 +6,7 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2025/11/03 14:12:04 by rparodi          ###   ########.fr        #
+#    Updated: 2025/12/11 14:40:31 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,68 +26,11 @@ CFLAGS = -Werror -Wextra -Wall
 INC_DIR = includes
 CPPFLAGS = $(addprefix -I, $(INC_DIR)) -MMD -MP
 
-
 # Objects
 OBJDIRNAME = ./build
 OBJ = $(addprefix $(OBJDIRNAME)/,$(SRC:.c=.o))
 
-SRC =	char/ft_isalnum.c \
-		char/ft_isalpha.c \
-		char/ft_isascii.c \
-		char/ft_isdigit.c \
-		char/ft_isprint.c \
-		char/ft_tolower.c \
-		char/ft_toupper.c \
-		convert/ft_atoi.c \
-		convert/ft_atoll.c \
-		convert/ft_atou.c \
-		convert/ft_itoa.c \
-		list/ft_lstadd_back.c \
-		list/ft_lstadd_front.c \
-		list/ft_lstclear.c \
-		list/ft_lstdelone.c \
-		list/ft_lstiter.c \
-		list/ft_lstlast.c \
-		list/ft_lstmap.c \
-		list/ft_lstnew.c \
-		list/ft_lstsize.c \
-		math/ft_abs.c \
-		math/ft_max.c \
-		math/ft_min.c \
-		math/ft_power.c \
-		math/ft_sqrt.c \
-		memory/ft_bzero.c \
-		memory/ft_calloc.c \
-		memory/ft_memchr.c \
-		memory/ft_memcmp.c \
-		memory/ft_memcpy.c \
-		memory/ft_memmove.c \
-		memory/ft_memset.c \
-		print/ft_printf.c \
-		print/ft_put.c \
-		print/ft_putchar_fd.c \
-		print/ft_putendl_fd.c \
-		print/ft_putnbr_fd.c \
-		print/ft_putstr_fd.c \
-		str/ft_split.c \
-		str/ft_strchr.c \
-		str/ft_strcmp.c \
-		str/ft_strcpy.c \
-		str/ft_strdup.c \
-		str/ft_striteri.c \
-		str/ft_strjoin.c \
-		str/ft_strlcat.c \
-		str/ft_strlcpy.c \
-		str/ft_strlen.c \
-		str/ft_strmapi.c \
-		str/ft_strncmp.c \
-		str/ft_strncpy.c \
-		str/ft_strnstr.c \
-		str/ft_strrchr.c \
-		str/ft_strtrim.c \
-		str/ft_substr.c
-
-# Colors
+#Colors
 GREEN = \033[32m
 GREY = \033[0;90m
 RED = \033[0;31m
@@ -97,9 +40,10 @@ END = \033[0m
 # Rules
 
 # All (make all)
-all: header $(NAME) footer
+all: header lib $(NAME) footer
 
-lib: $(NAME)
+lib:
+	@make --no-print-directory -f ./libft.mk
 
 # Bonus (make bonus)
 bonus: header $(OBJ) $(LIB_OBJ) footer
