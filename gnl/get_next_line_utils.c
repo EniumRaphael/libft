@@ -6,26 +6,14 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 17:14:47 by rparodi           #+#    #+#             */
-/*   Updated: 2025/11/26 17:13:04 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/11/20 11:18:33 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "gnl.h"
+#include "str.h"
 
-size_t	ft_strlen(char const *str)
-{
-	size_t	i;
-
-	i = 0;
-	if (str)
-	{
-		while (str[i])
-			i++;
-	}
-	return (i);
-}
-
-char	*ft_strjoin(char *s1, char *s2, int i, int j)
+char	*ft_strjoin_gnl(char *s1, char *s2, int i, int j)
 {
 	char	*temp;
 
@@ -101,7 +89,7 @@ char	*ft_get_next(char *str)
 	return (temp);
 }
 
-int	ft_strchr(char *str, char c)
+int	ft_strchr_index(char *str, char c)
 {
 	int	i;
 
