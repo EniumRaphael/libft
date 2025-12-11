@@ -20,7 +20,6 @@
 - [Usage](#usage)
 - [Testing](#testing)
 - [Functions List](#functions-list)
-- [Author](#author)
 
 ### 🎯 About
 
@@ -206,7 +205,6 @@ This will compile and run all tests in the `test/` directory.
 - [Utilisation](#utilisation-1)
 - [Tests](#tests)
 - [Liste des fonctions](#liste-des-fonctions)
-- [Auteur](#auteur-1)
 
 ### 🎯 À propos
 
