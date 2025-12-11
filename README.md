@@ -99,7 +99,7 @@ make re         # Rebuild from scratch
 
 2. **Compile your program with libft:**
 ```bash
-clang -Wall -Wextra -Werror -I includes/libft your_program.c -L. -lft -o your_program
+clang -Wall -Wextra -Werror -I includes your_program.c -L. -lft -o your_program
 ```
 
 #### Example Program
@@ -323,7 +323,7 @@ make re         # Recompiler depuis zéro
 
 2. **Compiler votre programme avec libft :**
 ```bash
-clang -Wall -Wextra -Werror -I includes/libft votre_programme.c -L. -lft -o votre_programme
+clang -Wall -Wextra -Werror -I includes votre_programme.c -L. -lft -o votre_programme
 ```
 
 #### Programme exemple
