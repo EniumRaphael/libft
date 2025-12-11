@@ -99,7 +99,7 @@ make re         # Rebuild from scratch
 
 2. **Compile your program with libft:**
 ```bash
-clang -Wall -Wextra -Werror -I includes your_program.c -L. -lft -o your_program
+clang -Wall -Wextra -Werror -I includes your_program.c -L build -lft -o your_program
 ```
 
 #### Example Program
@@ -108,12 +108,13 @@ clang -Wall -Wextra -Werror -I includes your_program.c -L. -lft -o your_program
 #include "libft/str.h"
 #include "libft/print.h"
 #include "libft/convert.h"
+#include <stdlib.h>
 
 int main(void)
 {
     char *str = ft_strdup("Hello, 42!");
     ft_printf("String: %s\n", str);
-    ft_printf("Length: %d\n", ft_strlen(str));
+    ft_printf("Length: %d\n", (int)ft_strlen(str));
     
     int num = ft_atoi("42");
     char *num_str = ft_itoa(num);
@@ -323,7 +324,7 @@ make re         # Recompiler depuis zéro
 
 2. **Compiler votre programme avec libft :**
 ```bash
-clang -Wall -Wextra -Werror -I includes votre_programme.c -L. -lft -o votre_programme
+clang -Wall -Wextra -Werror -I includes votre_programme.c -L build -lft -o votre_programme
 ```
 
 #### Programme exemple
@@ -332,12 +333,13 @@ clang -Wall -Wextra -Werror -I includes votre_programme.c -L. -lft -o votre_prog
 #include "libft/str.h"
 #include "libft/print.h"
 #include "libft/convert.h"
+#include <stdlib.h>
 
 int main(void)
 {
     char *str = ft_strdup("Bonjour, 42!");
     ft_printf("Chaîne: %s\n", str);
-    ft_printf("Longueur: %d\n", ft_strlen(str));
+    ft_printf("Longueur: %d\n", (int)ft_strlen(str));
     
     int num = ft_atoi("42");
     char *num_str = ft_itoa(num);
