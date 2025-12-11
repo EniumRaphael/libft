@@ -6,7 +6,7 @@
 #    By: rparodi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:05:05 by rparodi           #+#    #+#              #
-#    Updated: 2025/12/11 16:29:54 by rparodi          ###   ########.fr        #
+#    Updated: 2025/12/11 16:53:11 by rparodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,14 +27,14 @@ MAKE += --no-print-directory
 
 export CC CFLAGS CPPFLAGS INC_DIR OBJDIRNAME MAKE RM
 
-SUB_MAKEFILE =	gnl/gnl.mk \
-				char/char.mk \
+SUB_MAKEFILE =	char/char.mk \
+				convert/convert.mk \
+				gnl/gnl.mk \
+				list/list.mk \
+				math/math.mk \
 				memory/memory.mk \
 				print/print.mk \
-				math/math.mk \
-				list/list.mk \
-				str/str.mk \
-				convert/convert.mk
+				str/str.mk
 
 GREEN = \033[32m
 GREY = \033[0;90m
