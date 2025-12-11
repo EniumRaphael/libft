@@ -6,11 +6,12 @@
 /*   By: rparodi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 17:12:02 by rparodi           #+#    #+#             */
-/*   Updated: 2023/11/22 13:31:13 by rparodi          ###   ########.fr       */
+/*   Updated: 2025/11/28 00:40:27 by rparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "gnl.h"
+#include "str.h"
 
 char	*ft_check(char *memory, int fd)
 {
@@ -21,13 +22,13 @@ char	*ft_check(char *memory, int fd)
 	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
 		return (NULL);
-	while (ft_strchr(memory, '\n') <= 0 && bytescopy)
+	while (ft_strchr_index(memory, '\n') <= 0 && bytescopy)
 	{
 		bytescopy = read(fd, buffer, BUFFER_SIZE);
 		if (bytescopy == -1)
 			return (ft_free(buffer));
 		buffer[bytescopy] = '\0';
-		memory = ft_strjoin(memory, buffer, 0, -1);
+		memory = ft_strjoin_gnl(memory, buffer, 0, -1);
 	}
 	free(buffer);
 	return (memory);
@@ -64,15 +65,16 @@ char	*ft_free(char *str)
 
 char	*get_next_line(int fd)
 {
-	static char	*memory = NULL;
-	char		*line;
+	char	**memory;
+	char	*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	memory = ft_check(memory, fd);
-	if (!memory)
-		return (ft_free(memory));
-	line = ft_get_line(memory);
-	memory = ft_get_next(memory);
+	memory = memory_storage();
+	*memory = ft_check(*memory, fd);
+	if (!*memory)
+		return (NULL);
+	line = ft_get_line(*memory);
+	*memory = ft_get_next(*memory);
 	return (line);
 }
