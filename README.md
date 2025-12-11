@@ -30,7 +30,7 @@ This library serves as a foundation for future C projects, providing reliable an
 
 ### ✨ Features
 
-- **70+ functions** organized into logical modules
+- **60+ functions** organized into logical modules
 - **Modular architecture** with separate headers for each category
 - **Well-documented** code with detailed function descriptions
 - **Strict compilation** with `-Wall -Wextra -Werror` flags
@@ -216,7 +216,7 @@ Cette bibliothèque sert de fondation pour les futurs projets en C, fournissant 
 
 ### ✨ Fonctionnalités
 
-- **Plus de 70 fonctions** organisées en modules logiques
+- **Plus de 60 fonctions** organisées en modules logiques
 - **Architecture modulaire** avec des headers séparés pour chaque catégorie
 - **Code bien documenté** avec des descriptions détaillées des fonctions
 - **Compilation stricte** avec les flags `-Wall -Wextra -Werror`
