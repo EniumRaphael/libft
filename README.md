@@ -2,10 +2,6 @@
 
 <div align="center">
 
-![42 School](https://img.shields.io/badge/42-School-000000?style=for-the-badge&logo=42&logoColor=white)
-![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
-
 *A comprehensive C library recreating standard library functions and more*
 
 [English](#english) | [Français](#français)
@@ -95,35 +91,6 @@ make re         # Rebuild from scratch
 #include "libft/str.h"
 #include "libft/memory.h"
 #include "libft/print.h"
-```
-
-2. **Compile your program with libft:**
-```bash
-clang -Wall -Wextra -Werror -I includes your_program.c -L build -lft -o your_program
-```
-
-#### Example Program
-
-```c
-#include "libft/str.h"
-#include "libft/print.h"
-#include "libft/convert.h"
-#include <stdlib.h>
-
-int main(void)
-{
-    char *str = ft_strdup("Hello, 42!");
-    ft_printf("String: %s\n", str);
-    ft_printf("Length: %d\n", (int)ft_strlen(str));
-    
-    int num = ft_atoi("42");
-    char *num_str = ft_itoa(num);
-    ft_printf("Number: %s\n", num_str);
-    
-    free(str);
-    free(num_str);
-    return (0);
-}
 ```
 
 ### 🧪 Testing
@@ -227,16 +194,6 @@ This will compile and run all tests in the `test/` directory.
 | `get_next_line` | Read line from file descriptor |
 | `get_next_line_clear` | Free GNL static memory |
 
-### 👨‍💻 Author
-
-**Raphael Parodi** (rparodi)
-- 42 School Student
-- GitHub: [@EniumRaphael](https://github.com/EniumRaphael)
-
-### 📄 License
-
-This project is part of the 42 school curriculum. Feel free to use it for learning purposes.
-
 ---
 
 ## Français
@@ -320,35 +277,6 @@ make re         # Recompiler depuis zéro
 #include "libft/str.h"
 #include "libft/memory.h"
 #include "libft/print.h"
-```
-
-2. **Compiler votre programme avec libft :**
-```bash
-clang -Wall -Wextra -Werror -I includes votre_programme.c -L build -lft -o votre_programme
-```
-
-#### Programme exemple
-
-```c
-#include "libft/str.h"
-#include "libft/print.h"
-#include "libft/convert.h"
-#include <stdlib.h>
-
-int main(void)
-{
-    char *str = ft_strdup("Bonjour, 42!");
-    ft_printf("Chaîne: %s\n", str);
-    ft_printf("Longueur: %d\n", (int)ft_strlen(str));
-    
-    int num = ft_atoi("42");
-    char *num_str = ft_itoa(num);
-    ft_printf("Nombre: %s\n", num_str);
-    
-    free(str);
-    free(num_str);
-    return (0);
-}
 ```
 
 ### 🧪 Tests
@@ -451,16 +379,6 @@ Cela compilera et exécutera tous les tests du répertoire `test/`.
 |----------|-------------|
 | `get_next_line` | Lit une ligne depuis un descripteur de fichier |
 | `get_next_line_clear` | Libère la mémoire statique de GNL |
-
-### 👨‍💻 Auteur
-
-**Raphael Parodi** (rparodi)
-- Étudiant à l'école 42
-- GitHub: [@EniumRaphael](https://github.com/EniumRaphael)
-
-### 📄 Licence
-
-Ce projet fait partie du cursus de l'école 42. N'hésitez pas à l'utiliser à des fins d'apprentissage.
 
 ---
 
